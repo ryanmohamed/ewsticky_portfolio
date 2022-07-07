@@ -1,0 +1,26 @@
+PORTFOLIO will be a PWA
+
+What is a PWA?
+    A progressive web app. Progressive web apps
+    have their static data cached for use on a desktop, or 
+    during network error. OFFLINE/CACHE FIRST behaviour
+
+To do so, we'll use a template provided by CRA
+    "npx create-react-app my-app --template cra-template-pwa"
+    - integrates Workbox that caches and optimizes app for PWA
+
+A couple of things to keep note of are 
+    - service worker
+
+We want to create seperate directories for everything
+Follow best practice!!!! (comps, hooks, utilites)
+                         (create directory for static resources like images in public folder!)
+
+To install a PWA on a device, they must be SERVED
+via HTTPS (secured with an SSL certificate). 
+We can do this MANY WAYS (vercel, netlify) but we'll use
+    - deploy to FIREBASE
+        (install firebase cl tools via "npm i -g firebase-tools")
+    - "firebase init hosting"
+    - either use a new or existing project
+    - use build as public directory
