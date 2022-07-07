@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+:root {
+    --navheight: 10vw;
+    --primary: #0d0d12;
+    --secondary: #f5f6ff;
+    --accent: #2a2739;
+}
+
+.Tab a {
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary);
+}
+
+.Tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 50%;
+    width: 100%;
+
+    margin: 10px;
+    padding: 10px;
+
+    border-radius: 8px;
+
+    background-color: var(--accent);
+
+    transition: 0.23s;
+}
+
+.Tab:hover {
+    background-color: var(--secondary);
+    cursor: pointer;
+}
+
+.Tab:hover a{
+    color: var(--accent);
+}
+
+.Icon {
+
+}
+
