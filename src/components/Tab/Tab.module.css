@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
+
 :root {
     --navheight: 10vw;
     --primary: #0d0d12;
@@ -8,39 +9,72 @@
 }
 
 .Tab a {
+    text-decoration: none;
     font-style: italic;
     font-family: 'Montserrat', sans-serif;
     color: var(--secondary);
 }
 
-.Tab {
+.Tab { /* can be though of as link container, a li wrapper */
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    height: 50%;
-    width: 100%;
-
-    margin: 10px;
-    padding: 10px;
+    margin-right: calc(var(--navheight) * 0.2);
 
     border-radius: 8px;
+    transition: 250ms;
+}
 
-    background-color: var(--accent);
+.Link {
+    transition: .23s;
+    position: relative;
 
-    transition: 0.23s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.Link span {
+    z-index: 1;
+    text-shadow: var(--primary) 0 3px 3px;
+}
+
+.Link .Svg{
+    max-width: 80%; /* text size determines how big */
+    height: auto;
+
+    position: absolute;
+
+    z-index: 0;
+    transition: 250ms ease-out;
 }
 
 .Tab:hover {
-    background-color: var(--secondary);
     cursor: pointer;
 }
 
-.Tab:hover a{
-    color: var(--accent);
+.Tab:hover .Svg {
+    max-width: 95%;
+    filter: brightness(1.1) drop-shadow(0px 8px 24px rgba(149, 157, 165, 0.8));
 }
 
-.Icon {
 
+@media screen and (max-width: 828px){
+    .Tab {
+        margin: 0;
+    }
+    .Link span {
+        font-style: normal;
+        font-size: 2rem;
+    }
+    .Link .Svg{
+        max-width: 5vh; 
+        height: auto;
+    }
+    .Link:hover .Svg {
+        max-width: 7vh;
+        filter: brightness(1.1);
+    }
+    
 }
-

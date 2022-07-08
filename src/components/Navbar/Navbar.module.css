@@ -12,17 +12,19 @@
 }
 
 .Navbar {
+    position: relative;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     background-color: var(--primary);
     height: var(--navheight);
-    padding: 25px;
+    padding: 0 25px;
 }
 
 .logo {
-    max-width: calc(var(--navheight) - 2vw); /* 8vw */
+    max-width: calc(var(--navheight)); /* 8vw */
     height: auto;
     display: inline-block;
 }
@@ -37,42 +39,73 @@
     list-style: none;
 }
 
-.Burger {
-    display: none;
-    list-style: none;
+.Arrow {
+    display: none;   
+}
+
+.Arrow:hover{
+    cursor: pointer;
+}
+
+.Arrow img {
+    max-width: 100%;
+    height: auto;
+
+    transition: 250ms;
+    filter: invert(0.5) sepia(1) saturate(0);
+}
+
+.Up {
+    transform: rotate(180deg);
+}
+
+.Down {
+    transform: rotate(0deg);
+}
+
+.Up:hover {
+    transform: scale(1.1) rotate(180deg);
+}
+
+.Down:hover {
+    transform: scale(1.1) rotate(0deg);
 }
 
 @media screen and (max-width: 828px){
+
     .Tabs {
-        display: none;
+        background-color: var(--primary);
+        margin: 0;
+        flex-direction: row;
+        justify-content: space-between;
+
+        width: 100vw;
+        min-height: 10vh;
+        padding: 0 30px;
+
+        position: fixed;
+        bottom: -10vh;
+        right: 0;
+
+        opacity: 0;
+
+        transition: 250ms;
     }
 
-    .Burger{
+    .Arrow{
+
         height: var(--navheight);
         width: var(--navheight);
 
-        display: block;
-        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: calc(var(--navheight)/5);
     }
 
-    .Burger:hover{
-        cursor: pointer;
-    }
-
-    .Burger li {
-        height: calc( calc(var(--navheight) - 40px) / 5);
-        width: 100%;
-        background-color: var(--secondary);
-
-        border-radius: 8px;
-        transition: .23s;
-    }
-
-    .Burger li:not(.Burger li:nth-child(3)) {
-        margin-bottom: calc( calc(var(--navheight) - 40px) / 5);
-    }
 }
 
-.Tabs a {
-    text-decoration: none;
+.Entered {
+    transform: translate(-100%, 0);
 }
