@@ -1,2 +1,2 @@
 # ewsticky_portfolio
-firebase deployed site - https://ew-stick.web.app
+firebase deployed site - https://ew-sticky.web.app
