@@ -12,7 +12,12 @@ function Tab(props) {
         <li className={styles.Tab}>
  
            
-            <Link className={styles.Link} to={props.path} onClick={ () => setOpen(!open) }> 
+            <Link className={styles.Link} to={props.path} 
+                  onClick={ (e) => {
+                    setOpen(!open);
+                    props.backToParent(props.path);
+                  } 
+            }> 
                 <span>{props.descriptor}</span>
                 <img className={styles.Svg} src={`./assets/blob${props.blobNum}.svg`} alt="blob1" />
             </Link>

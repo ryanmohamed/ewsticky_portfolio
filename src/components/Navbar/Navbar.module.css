@@ -5,7 +5,7 @@
 }
 
 :root {
-    --navheight: 10vw;
+    --navheight: 10vh;
     --primary: #0d0d12;
     --secondary: #f5f6ff;
     --accent: #2a2739;
@@ -24,7 +24,7 @@
 }
 
 .logo {
-    max-width: calc(var(--navheight)); /* 8vw */
+    max-width: calc(var(--navheight) * 0.9); /* 8vw */
     height: auto;
     display: inline-block;
 }
@@ -37,6 +37,7 @@
     justify-content: center;
 
     list-style: none;
+    z-index: 3;
 }
 
 .Arrow {
@@ -85,7 +86,7 @@
 
         position: fixed;
         bottom: -10vh;
-        right: 0;
+        left: 0;
 
         opacity: 0;
 
@@ -102,6 +103,8 @@
         justify-content: center;
 
         padding: calc(var(--navheight)/5);
+        position: fixed;
+        right: 0;
     }
 
 }
