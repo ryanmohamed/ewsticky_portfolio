@@ -5,6 +5,8 @@
     --buttonsz: 50px;
 }
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -124,27 +126,45 @@ input[type=radio]:checked {
 }
 
 .Content {
-    padding: calc(2em + 1.5em + 1.34em + 1.86em) 25px 0 25px;
-    
+    padding: calc(60px + 3.83em) 25px 25px 25px;
+    position: relative;
 }
 
-.Title {
-    float: right;
-    z-index: 5;
-    font-family: 'Prompt', sans-serif;
-    font-size: 2em;
-
+.Header {
+    z-index: 2;
     position: absolute;
     top: calc(50% + 25px);
     margin-left: 25px;
+
+    height: 3.83em;
+}
+
+.Title {
+    font-family: 'Prompt', sans-serif;
 }
 
 .Company {
-    z-index: 5;
-    font-size: 1.5em;
     font-family: 'Ubuntu', sans-serif;
+}
 
-    position: absolute;
-    top: calc(50% + 25px + 2em);
-    margin-left: 25px;
+b , p {
+    font-family: 'Prompt', 'sans-serif';
+}
+
+@media screen and (max-width: 828px){
+
+    :root {
+        --panelh: 550px;
+        --panelw: 400px;
+    }
+
+    .Title {
+        font-size: 1.5em;
+    }
+
+    .Company {
+        font-size: 1em;
+    }
+    
+
 }

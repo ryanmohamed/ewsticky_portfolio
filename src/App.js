@@ -32,7 +32,7 @@ function App() {
       <Navbar backToParent={passDataBack}/>
 
       {/* not in a route bc we want to avoid unmount! */}
-      {/* <Home toggle={home}/> PUT ME BACK */}
+      {/* <Home toggle={home}/>  */}
 
       <Routes>
         <Route path="/"/>

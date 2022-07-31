@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import usePhoneMode from '../../hooks/usePhoneMode';
 import styles from './Panel.module.css'
 
 
 const panelw = 750;
 const panelh = 450;
-const slide = panelw + 0; //<- margin if any
+let slide = panelw + 0; //<- margin if any
 
 function Panel(props) {
   
@@ -13,6 +14,7 @@ function Panel(props) {
 
   const [shift, setShift] = useState(0);
   const [index, setIndex] = useState(0);
+  const [phoneMode] = usePhoneMode();
   
   const left = (e) => {
     e.preventDefault();
@@ -38,6 +40,11 @@ function Panel(props) {
     setIndex(Math.abs(shift/slide));
   }, [shift]);
 
+  useEffect(() => {
+    slide = phoneMode ? 400 : 750;
+    setShift(0);
+  }, [phoneMode]);
+
   //REACT CLONE ELEMENT, if we want to reproduce children with new props
 //   const clones = React.Children.map(children, (child, key) => {
 //     const kid = React.cloneElement(child, { style: { padding: "10px" }, key: { key } }, null);
@@ -49,8 +56,10 @@ function Panel(props) {
     <div className={styles.Panel}>
 
 
-    <h1 className={styles.Title}>{title}</h1>
-    <h2 className={styles.Company}>{company}</h2>
+    <div className={styles.Header}>
+      <h1 className={styles.Title}>{title}</h1>
+      <h2 className={styles.Company}>{company}</h2>
+    </div>
 
     <button onClick={left} className={styles.LeftButton}>
         <img alt="arrow" src="/assets/chevron.svg"></img>
